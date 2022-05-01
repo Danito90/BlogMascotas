@@ -10,7 +10,7 @@ class Mascota(models.Model):
     razaGato = models.CharField(choices=RAZAGATOS, default='Seleccionar', max_length=80)
     edad= models.CharField(choices=EDAD,default='Joven',max_length=50)
     tamano= models.CharField(choices=TAMANO,default='Pequeño',max_length=50)
-    color= models.CharField(max_length=50, null=True, blank=True)
+    color= models.CharField(max_length=200, null=True, blank=True)
     collar= models.BooleanField(default=False)
     genero= models.CharField(choices=GENERO,default='Macho',max_length=50)  
     foto= models.ImageField(upload_to='mascotas/images')
