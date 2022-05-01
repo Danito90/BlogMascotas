@@ -1,0 +1,7 @@
+EDAD=[('Joven','Joven'),('Adulto','Adulto'),]
+TAMANO=[('Pequeño','Pequeño'),('Mediano','Mediano'),('Grande','Grande'),]
+GENERO=[('Macho','Macho'),('Hembra','Hembra'),]
+RAZAPERROS=[('Seleccionar','Seleccionar'),('Akita','Akita'),('Beagle','Beagle'),('Border Collie','Border Collie'),('Border Terrier','Border Terrier'),('Bulldog','Bulldog'),('Callejero','Callejero'),('Caniche','Caniche'),('Chihuahua','Chihuahua'),('Cruza','Cruza'),
+            ('Dalmata','Dalmata'),('Doverman','Doverman'),('Golden Retriever','Golden Retriever'),('Labrador Retriever','Labrador Retriever'),('Mastin','Mastin'),('Pitbull','Pitbull'),('Poodle','Poodle'),('Rottweiler','Rottweiler'),('Salchicha','Salchicha'),('Shih Tzu','Shih Tzu'),('Yorkshire Terrier','Yorkshire Terrier'),]
+RAZAGATOS=[('Seleccionar','Seleccionar'),('Abinisio','Abinisio'),('Angora','Angora'),('Bengala','Bengala'),('Birmano','Birmano'),('Bombay','Bombay'),('Burmilla','Burmilla'),('Cacatua','Cacatua'),('Ceiba','Ceiba'),('Cejas','Cejas'),('Comun','Comun'),
+           ('Esfinge','Esfinge'),('Siberiano','Siberiano'),('Himalayo','Himalayo'),('Javanés','Javanés'),('Korat','Korat'),('Laika','Laika'),('Maine','Maine'),('Persa','Persa'),('Ragdoll','Ragdoll'),('Siamés','Siamés'),('Siberiano','Siberiano'),('Sphynx','Sphynx'),('Tibetano','Tibetano'),('Van Turco','Van Turco'),]
