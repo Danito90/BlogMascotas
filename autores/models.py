@@ -1,15 +1,17 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 from contactos.models import Contacto
 
 # Create your models here.
 class Autor(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     id_contacto = models.ForeignKey(Contacto, on_delete=models.CASCADE, blank=True, null=True)
     domicilio = models.CharField(max_length=100, blank=True, null=True)
     nacimiento = models.DateField(blank=True, null=True)
-    foto= models.ImageField(upload_to='autores/images', blank=True, null=True)
+    foto= models.ImageField(upload_to='autores', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     activo = models.BooleanField(default=True)

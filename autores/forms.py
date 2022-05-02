@@ -14,8 +14,8 @@ class autorForm(ModelForm,forms.Form):
         fields= ['nombre','apellido','id_contacto','domicilio','nacimiento','foto','activo']
         widgets = {
             "nacimiento": forms.widgets.DateInput(
-                                 # Agregar tipo de fecha al campo de fecha
-                attrs={"type": "date"}
+                # Agregar tipo de fecha al campo de fecha
+                attrs={'class': 'form-control', "type": "date"}
             )
         }
         

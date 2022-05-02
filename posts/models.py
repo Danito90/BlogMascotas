@@ -12,6 +12,7 @@ class Post(models.Model):
     estado= models.CharField(choices=ESTADO,default='Buscado',max_length=50)
     ubicacion= models.CharField(max_length=200)
     fecha= models.DateTimeField(auto_now_add=True)
+    foto= models.ImageField(upload_to='posts', null=True, blank=True)
     visto= models.IntegerField(blank=True, null=True)
     reencuentro= models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)

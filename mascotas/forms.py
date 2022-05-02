@@ -48,14 +48,14 @@ class mascotaForm(ModelForm, forms.Form):
             'codigo': {'max_length': "Este campo no puede tener mas de 50 caracteres"},
             }
         widgets = {
-            'id_autor': forms.TextInput(attrs={'placeholder': 'Ingrese su dueño'}),
-            'tipo': forms.TextInput(attrs={'placeholder': 'Ingrese el tipo de mascota'}),
-            'color': forms.TextInput(attrs={'type': 'color', 'placeholder': 'Ingrese el color de la mascota'}),
+            'id_autor': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese su dueño'}),
+            'tipo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese el tipo de mascota'}),
+            'color': forms.TextInput(attrs={'class': 'form-control', 'type': 'color', 'placeholder': 'Ingrese el color de la mascota'}),
             }
 
     # Modificar el método de inicialización de la clase para lograr el propósito de agregar atributos comunes en lote
     def __init__(self, *args, **kwargs):
-        super(Mascota, self).__init__(*args, **kwargs)
+        super(mascotaForm, self).__init__(*args, **kwargs)
         # for field_name in self.base_fields:
         for field in iter(self.fields):
             self.fields[field].widget.attrs.update({
