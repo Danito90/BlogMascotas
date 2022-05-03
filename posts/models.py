@@ -30,4 +30,4 @@ class Post(models.Model):
         ] # tambien para campos unicos en pares
     
     def __str__(self):
-        return f"{self.autor}: {self.nombreMascota}, {self.raza}, {self.edad}, {self.estado}, {self.ubicacion}"
+        return f"{self.id_autor}: {self.id_mascota}, {self.titulo}, {self.subTitulo}, {self.estado}, {self.ubicacion}, {self.foto}"

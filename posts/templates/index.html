@@ -1,0 +1,90 @@
+{% extends "plantilla.html" %}
+
+<!--cargando carpeta statica-->
+{% load static %} {% block title %}Inicio{% endblock %} {% block content %}
+<body>
+  <div class="cuadricula">
+    <div class="grid-item1">
+      <div class="barra">
+        <section class="elemento">
+          <ul class="nav">
+            <li>
+              <a class="imagLogo" href="{% url 'index' %}"
+                ><img class="imagLogo" src="{% static 'img/logo.png' %}" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="#">Inicio</a>
+            </li>
+            <li>
+              <a href="#">Buscados</a>
+            </li>
+            <li>
+              <a href="#">Encontrados</a>
+            </li>
+
+            <li>
+              <a sec:authorize="hasRole('ROLE_ADMIN')" href="#">Perfil</a>
+              <ul>
+                <li><a th:href="@{/usuario/lista}">Listar</a></li>
+                <li><a th:href="@{/usuario/form}">Agregar</a></li>
+                <li><a th:href="@{/usuario/lista}">Modificaciones</a></li>
+              </ul>
+            </li>
+            <li>
+              <!-- <a th:href="@{/logout/}" onclick="this.parentNode.submit();">Logout</a> -->
+              <form method="POST" th:action="@{/logout}">
+                <a href="#" onclick="this.parentNode.submit();">Logout</a>
+              </form>
+            </li>
+          </ul>
+        </section>
+        <section class="elemento logout">
+          <div class="datoUserCard">
+            <div class="datoUser">
+              <img
+                class="imagLogo"
+                src="{{ url }}"
+                alt=""
+              />
+            </div>
+            <div class="datoUserText">
+              <span> Usuario </span>
+              <span> Rol </span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="grid-item2">
+      <h1>Nuevos Posts</h1>
+      {% for post in posts %}
+      <p>{{ post.id }}</p>
+      {{ post.id_autor.nombre }} <br />
+      {{ post.tituto }} <br />
+      {{ post.subTitulo }} <br />
+      {{ post.contenido }} <br />
+      {{ post.fecha }} <br />
+
+      <img
+        src="{{ post.foto.url}}"
+        width="100"
+        height="100"
+        border="1"
+        alt=""
+      /><br />
+
+      {% endfor%}
+    </div>
+    <div class="grid-item3">
+      <h3>Categorias</h3>
+      {% for post in posts %}
+      <a href="">{{ post.estado }}</a>
+
+      {% endfor %}
+    </div>
+  </div>
+</body>
+
+{% endblock %}

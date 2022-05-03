@@ -1,4 +1,6 @@
+from datetime import date
 from django.shortcuts import get_object_or_404, redirect, render
+from autores.models import Autor
 
 from posts.models import Post
 from posts.forms import postForm
@@ -37,3 +39,15 @@ def eliminarPost(request,id):
         post.delete()
     return redirect('agregarPost')
 
+def index(request):
+    nroPosts = Post.objects.filter(activo=True,reencuentro=False).count()  # cuenta cheques pagados
+    posts = Post.objects.all().order_by('fecha')
+    logeado = Autor.objects.filter(user=request.user.id)
+    for l in logeado:
+        url = l.foto.url
+    # .filter(empresa__user__id=request.user.id) filtro por empresa-usuario-usuario logeado
+    #.filter(empresa__user__id=1) filtra por usuario id 1
+    #filtra empresa 1 -2  ... .filter(empresa__in=[1, 2,])
+    vto = date.today()
+
+    return render(request, 'index.html',{'posts': posts, 'nroPosts': nroPosts, 'vto': vto, 'url': url})

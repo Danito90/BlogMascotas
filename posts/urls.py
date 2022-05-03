@@ -3,6 +3,7 @@ from django.urls import path
 from posts.views import *
 
 urlpatterns = [
+    path('', index, name='index'),
     path('agregarPost/', agregarPost, name='agregarPost'),
     path('detallePost/<int:id>/', detallePost, name='detallePost'),
     path('actualizarPost/<int:id>/', actualizarPost, name='actualizarPost'),

@@ -1,0 +1,178 @@
+@media only screen and (min-width:780px) {
+    .cuadricula {
+        display: grid;
+        grid-template-rows: 100px 1000px ; /* ancho de filas */
+        /*  grid-template-columns: 18% 18% 18% 18% 18%;  ancho de columnas */
+        grid-template-columns: 1fr [columna1] 1fr [columna2] 2fr [columna3] 1fr [columna4] 1fr [columna5]; /* ancho de columnas nombrando cada columna */
+        grid-column-gap: 20px; /* espaciado columnas */
+        grid-row-gap: 10px; /* espaciado filas */
+        /* grid-gap: 10px; espaciado columnas y filas */
+        grid-template-areas:
+          "area1 area1 area1 area1 area1"
+          "area2 area2 area2 area2 area3";
+        /* armamos el formato de las areas */
+      }
+}
+
+@media only screen and (max-width:780px) {
+    .cuadricula {
+        display: grid;
+        grid-template-rows: 100px 1000px ; /* ancho de filas */
+        /*  grid-template-columns: 18% 18% 18% 18% 18%;  ancho de columnas */
+        grid-template-columns: 1fr [columna1] 1fr [columna2] 2fr [columna3] 1fr [columna4] 1fr [columna5]; /* ancho de columnas nombrando cada columna */
+        grid-column-gap: 20px; /* espaciado columnas */
+        grid-row-gap: 10px; /* espaciado filas */
+        /* grid-gap: 10px; espaciado columnas y filas */
+        grid-template-areas:
+          "area1 area1 area1 area1 area1"
+          "area2 area2 area2 area3 area3";
+        /* armamos el formato de las areas */
+      }
+}
+
+.grid-item1 {
+  grid-area: area1; /* definimos para cada cuadro el area que ocupa */
+}
+
+.grid-item2 {
+  background: grey;
+  text-align: center;
+  border: black 5px solid;
+  grid-area: area2;
+}
+
+.grid-item3 {
+  background: rgb(165, 2, 138);
+  text-align: center;
+  border: black 5px solid;
+  grid-area: area3;
+}
+
+
+
+
+/* =========================== Barra Menu =========================== */
+html {
+    min-height: 100%;
+    position: relative; /* para enviar luego el footer al fondo siempre*/
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background: radial-gradient(circle, #e2e8e8, #aab3b3); 
+    margin-bottom: 200px; /* para que el footer quede al fondo */
+  }
+
+  .imagLogo{
+    width: 90px;
+    height: 40px;
+    margin-left: 10px;
+  }
+    
+  .barraPosition{
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 0px !important;
+    z-index: 1 !important;
+  }
+  
+  .barra {
+    width: 100% !important;
+    background-color: rgb(255, 255, 255) !important;
+    /* display: inline-block !important; */
+    margin: auto !important;
+    color: rgb(157, 163, 156) !important;
+    text-align: center !important;
+    display:flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+  
+  .elemento{
+  } ;
+  
+  .logout{
+    padding: 4px 30px 2px;
+  }
+  
+  /* .barra section.elemento img{
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgb(16, 49, 0);
+  } */
+  
+  /* .barra section.elemento img:hover{
+    height: 70px;
+    width: 70px;
+    border: 2px solid rgb(16, 49, 0);
+  }
+   */
+  .datoUser{
+    padding: 0px 10px;
+  }
+  
+  .datoUserCard{
+    display: flex;
+    flex-flow:row wrap;
+  }
+  
+  
+  .datoUserText{
+    display: flex;
+    flex-flow: column wrap;
+    padding: 0px 10px
+  }
+  
+  ul,
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav li a {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 20px 30px;
+    display: block;
+  }
+
+  .nav li a img {
+    text-decoration: none;
+    display: block;
+  }
+  
+  .nav li a:hover {
+    background-color: #264014;
+    color: rgb(255, 255, 255);
+  }
+  
+  .nav > li {
+    float: left;
+  }
+  
+  .nav li ul {
+    position: absolute;
+  }
+  
+  .nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 130px;
+  }
+  
+  .nav li:hover > ul {
+    display: block;
+  }
+  
+  .nav li ul li {
+    position: relative;
+    width: 150px;
+  }
+  
+  .nav li ul li ul {
+    left: 100%;
+    top: 0;
+  }

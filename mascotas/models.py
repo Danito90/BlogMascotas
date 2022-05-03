@@ -36,4 +36,4 @@ class Mascota(models.Model):
         ]  # tambien para campos unicos en pares
 
     def __str__(self):
-        return f"{self.id_autor} - {self.nombreMascota}: {self.razaPerro}, {self.razaGato}, {self.edad}, {self.tamaño}, {self.color}, {self.collar}, {self.genero}, {self.foto}, {self.activo}"
+        return f"{self.id_autor} - {self.nombreMascota}: {self.razaPerro}, {self.razaGato}, {self.edad}, {self.tamano}, {self.color}, {self.collar}, {self.genero}, {self.foto}, {self.activo}"
