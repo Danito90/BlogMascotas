@@ -17,6 +17,7 @@ class Post(models.Model):
     reencuentro= models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    # para fecha puede ser default=timezone.now
     activo= models.BooleanField(default=True)
        
    

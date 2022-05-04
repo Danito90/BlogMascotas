@@ -1,178 +1,171 @@
-@media only screen and (min-width:780px) {
-    .cuadricula {
-        display: grid;
-        grid-template-rows: 100px 1000px ; /* ancho de filas */
-        /*  grid-template-columns: 18% 18% 18% 18% 18%;  ancho de columnas */
-        grid-template-columns: 1fr [columna1] 1fr [columna2] 2fr [columna3] 1fr [columna4] 1fr [columna5]; /* ancho de columnas nombrando cada columna */
-        grid-column-gap: 20px; /* espaciado columnas */
-        grid-row-gap: 10px; /* espaciado filas */
-        /* grid-gap: 10px; espaciado columnas y filas */
-        grid-template-areas:
-          "area1 area1 area1 area1 area1"
-          "area2 area2 area2 area2 area3";
-        /* armamos el formato de las areas */
-      }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media only screen and (max-width:780px) {
-    .cuadricula {
-        display: grid;
-        grid-template-rows: 100px 1000px ; /* ancho de filas */
-        /*  grid-template-columns: 18% 18% 18% 18% 18%;  ancho de columnas */
-        grid-template-columns: 1fr [columna1] 1fr [columna2] 2fr [columna3] 1fr [columna4] 1fr [columna5]; /* ancho de columnas nombrando cada columna */
-        grid-column-gap: 20px; /* espaciado columnas */
-        grid-row-gap: 10px; /* espaciado filas */
-        /* grid-gap: 10px; espaciado columnas y filas */
-        grid-template-areas:
-          "area1 area1 area1 area1 area1"
-          "area2 area2 area2 area3 area3";
-        /* armamos el formato de las areas */
-      }
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.grid-item1 {
-  grid-area: area1; /* definimos para cada cuadro el area que ocupa */
+/* .container{
+  max-width:600px;
+  margin: auto;
+  font-size: 18px;
+  padding:20px;
 }
 
-.grid-item2 {
-  background: grey;
-  text-align: center;
-  border: black 5px solid;
-  grid-area: area2;
+.container p{
+  margin-bottom: 10px;
+} */
+
+header {
+  height: 60px;
+  background: #972ea5;
+  display: flex;
+  padding: 0 20px;
 }
 
-.grid-item3 {
-  background: rgb(165, 2, 138);
-  text-align: center;
-  border: black 5px solid;
-  grid-area: area3;
+.menu-toggle {
+  display: none;
+  margin-left: auto;
+  color: #fff;
+  line-height: 60px;
+  font-size: 25px;
+  cursor: pointer;
 }
 
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-family: "Press Start 2P", cursive;
+}
 
+.logo a .imagLogo {
+  display: block;
+  color: #fff;
+  padding: 2px 0;
+  width: 100px;
+  line-height: 60px;
+}
 
+#menu {
+  margin-left: auto;
+}
 
-/* =========================== Barra Menu =========================== */
-html {
-    min-height: 100%;
-    position: relative; /* para enviar luego el footer al fondo siempre*/
-  }
-  
-  body {
-    padding: 0;
-    margin: 0;
-    background: radial-gradient(circle, #e2e8e8, #aab3b3); 
-    margin-bottom: 200px; /* para que el footer quede al fondo */
-  }
+#menu ul li {
+  display: inline-block;
+}
 
-  .imagLogo{
-    width: 90px;
-    height: 40px;
-    margin-left: 10px;
-  }
-    
-  .barraPosition{
-    position: sticky !important;
-    position: -webkit-sticky !important;
-    top: 0px !important;
-    z-index: 1 !important;
-  }
-  
-  .barra {
-    width: 100% !important;
-    background-color: rgb(255, 255, 255) !important;
-    /* display: inline-block !important; */
-    margin: auto !important;
-    color: rgb(157, 163, 156) !important;
-    text-align: center !important;
-    display:flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
-  }
-  
-  .elemento{
-  } ;
-  
-  .logout{
-    padding: 4px 30px 2px;
-  }
-  
-  /* .barra section.elemento img{
-    height: 50px;
-    width: 50px;
-    border: 2px solid rgb(16, 49, 0);
-  } */
-  
-  /* .barra section.elemento img:hover{
-    height: 70px;
-    width: 70px;
-    border: 2px solid rgb(16, 49, 0);
-  }
-   */
-  .datoUser{
-    padding: 0px 10px;
-  }
-  
-  .datoUserCard{
-    display: flex;
-    flex-flow:row wrap;
-  }
-  
-  
-  .datoUserText{
-    display: flex;
-    flex-flow: column wrap;
-    padding: 0px 10px
-  }
-  
-  ul,
-  ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav li a {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    padding: 20px 30px;
+#menu ul li a {
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  line-height: 60px;
+  padding: 0 8px;
+  text-transform: uppercase;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+}
+
+#menu ul li a:hover {
+  background: rgb(240, 142, 229);
+}
+
+.show {
+  height: 315px !important;
+}
+
+#menu ul li button {
+  font-weight: bold;
+  padding: 10px 6px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.botones {
+  display: inline-block;
+}
+
+#login {
+  background: rgb(96, 3, 150);
+  color: #fff;
+}
+
+#registro {
+  background: rgb(235, 163, 8);
+  color: rgb(255, 255, 255);
+}
+
+#login:hover {
+  background: rgb(245, 51, 229);
+  color: rgb(0, 0, 0);
+}
+
+#registro:hover {
+  background: rgb(233, 211, 90);
+  color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 700px) {
+  .menu-toggle {
     display: block;
   }
 
-  .nav li a img {
-    text-decoration: none;
-    display: block;
-  }
-  
-  .nav li a:hover {
-    background-color: #264014;
-    color: rgb(255, 255, 255);
-  }
-  
-  .nav > li {
-    float: left;
-  }
-  
-  .nav li ul {
+  #menu {
+    background: rgb(240, 142, 229);
     position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border: 1px solid #ffffff;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-out;
+    -ms-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
   }
-  
-  .nav li ul {
-    display: none;
-    position: absolute;
-    min-width: 130px;
-  }
-  
-  .nav li:hover > ul {
+
+  #menu ul li {
     display: block;
+    text-align: center;
   }
-  
-  .nav li ul li {
-    position: relative;
-    width: 150px;
+
+  #menu ul li a {
+    color: #fff;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(75, 38, 134);
+    width: 100%;
   }
-  
-  .nav li ul li ul {
-    left: 100%;
-    top: 0;
+
+  #menu ul li a:hover {
+    background: rgb(63, 5, 57);
   }
+
+  .container {
+    padding: 10px;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

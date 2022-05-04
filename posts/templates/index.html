@@ -1,4 +1,40 @@
 {% extends "plantilla.html" %}
+<!--cargando carpeta statica-->
+{% load static %} {% block title %}Formulario{% endblock %} {% block head %}
+<!--  FontAwesome  -->
+<script
+  src="https://kit.fontawesome.com/23e246eaed.js"
+  crossorigin="anonymous"
+></script>
+{% endblock %} {% block content %}
+
+<header>
+  <div class="logo">
+    <a href="{% url 'index' %}"
+      ><img class="imagLogo" src="{% static 'img/logo.png' %}" alt=""
+    /></a>
+  </div>
+  <nav id="menu">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Buscados</a></li>
+      <li><a href="#">Encontrados</a></li>
+      <li><a href="#">Perfil</a></li>
+      &nbsp; &nbsp;&nbsp;
+      <div class="botones">
+        <li><button id="login" type="input">Ingresar</button></li>
+        &nbsp;
+        <li><button id="registro" type="input">Registro</button></li>
+      </div>
+    </ul>
+  </nav>
+  <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+{% endblock %} {% block scripts %}
+<script src="{% static 'js/menu.js' %}"></script>
+{% endblock %} {% comment %} {% extends "plantilla.html" %}
 
 <!--cargando carpeta statica-->
 {% load static %} {% block title %}Inicio{% endblock %} {% block content %}
@@ -42,11 +78,7 @@
         <section class="elemento logout">
           <div class="datoUserCard">
             <div class="datoUser">
-              <img
-                class="imagLogo"
-                src="{{ url }}"
-                alt=""
-              />
+              <img class="imagLogo" src="{{ url }}" alt="" />
             </div>
             <div class="datoUserText">
               <span> Usuario </span>
@@ -87,4 +119,4 @@
   </div>
 </body>
 
-{% endblock %}
+{% endblock %} {% endcomment %}
